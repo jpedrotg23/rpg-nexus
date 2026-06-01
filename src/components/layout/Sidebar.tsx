@@ -4,13 +4,16 @@ import {
   ScrollText,
   Users,
   LogOut,
+  Sword,
 } from "lucide-react";
 
 import { logout } from "../../firebase/auth";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Sidebar() {
+  const location = useLocation();
+
   async function handleLogout() {
     try {
       await logout();
@@ -19,22 +22,44 @@ export default function Sidebar() {
     }
   }
 
+  function getLinkClass(path: string) {
+    const active = location.pathname === path;
+
+    return `
+      flex w-full items-center gap-3 rounded-xl px-4 py-3 font-semibold transition
+      ${
+        active
+          ? "bg-red-600 text-white"
+          : "text-zinc-300 hover:bg-zinc-900"
+      }
+    `;
+  }
+
   return (
     <aside className="flex h-screen w-72 flex-col border-r border-zinc-800 bg-zinc-950">
       <div className="border-b border-zinc-800 p-6">
-        <h1 className="text-3xl font-bold text-red-500">
-          RPG NEXUS
-        </h1>
+        <div className="flex items-center gap-3">
+          <Sword
+            size={32}
+            className="text-red-500"
+          />
 
-        <p className="mt-2 text-sm text-zinc-400">
-          Painel do Mestre
-        </p>
+          <div>
+            <h1 className="text-3xl font-bold text-red-500">
+              RPG NEXUS
+            </h1>
+
+            <p className="text-sm text-zinc-400">
+              Painel do Mestre
+            </p>
+          </div>
+        </div>
       </div>
 
       <nav className="flex-1 space-y-2 p-4">
         <Link
           to="/"
-          className="flex w-full items-center gap-3 rounded-xl px-4 py-3 font-semibold text-zinc-300 transition hover:bg-zinc-900"
+          className={getLinkClass("/")}
         >
           <Home size={20} />
           Dashboard
@@ -42,7 +67,7 @@ export default function Sidebar() {
 
         <Link
           to="/campaigns"
-          className="flex w-full items-center gap-3 rounded-xl bg-red-600 px-4 py-3 font-semibold text-white transition hover:bg-red-700"
+          className={getLinkClass("/campaigns")}
         >
           <ScrollText size={20} />
           Campanhas

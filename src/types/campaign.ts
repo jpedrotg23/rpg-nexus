@@ -5,6 +5,8 @@ export interface Campaign {
 
   description: string;
 
+  system: string;
+
   ownerId: string;
 
   createdAt: number;
