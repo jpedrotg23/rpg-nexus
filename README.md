@@ -1,412 +1,77 @@
-# ⚔️ RPG Nexus
+# RPG Nexus
 
-> Plataforma completa de RPG de Mesa desenvolvida com React Native + TypeScript + Firebase.
+Aplicação web em desenvolvimento para organizar campanhas de RPG de mesa, participantes, personagens e NPCs em um único ambiente.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/React%20Native-Mobile-blue?style=for-the-badge&logo=react" />
-  <img src="https://img.shields.io/badge/TypeScript-Strong%20Typing-3178C6?style=for-the-badge&logo=typescript" />
-  <img src="https://img.shields.io/badge/Firebase-Backend-orange?style=for-the-badge&logo=firebase" />
-  <img src="https://img.shields.io/badge/Vite-WebApp-646CFF?style=for-the-badge&logo=vite" />
-  <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-success?style=for-the-badge" />
-</p>
+## Sobre o projeto
 
----
+O RPG Nexus busca facilitar a organização de campanhas e informações de jogo para mestres e jogadores. A aplicação possui autenticação, navegação entre áreas protegidas e integração com Firebase para persistência de dados.
 
-# 📖 Sobre o Projeto
+O repositório contém uma **aplicação web** desenvolvida com React e TypeScript — não é um aplicativo React Native.
 
-O **RPG Nexus** é um sistema completo para campanhas de RPG de mesa, criado para unir jogadores e mestres em uma experiência digital moderna, dinâmica e totalmente sincronizada em tempo real.
+## Funcionalidades presentes no código
 
-O projeto foi desenvolvido utilizando:
+- Cadastro e autenticação de usuários com Firebase Authentication.
+- Rotas protegidas e navegação com React Router.
+- Painel inicial do usuário.
+- Criação, listagem e exclusão de campanhas.
+- Visualização dos detalhes de uma campanha.
+- Inclusão e remoção de participantes.
+- Criação e listagem de personagens e NPCs.
+- Modelos de personagens organizados por sistemas de RPG, incluindo D&D, Ordem Paranormal e Sacramento.
+- Persistência e atualização de dados de campanhas com Cloud Firestore.
 
-- ⚛️ React Native + TypeScript
-- 🔥 Firebase (Auth, Firestore e Storage)
-- ⚡ Vite
-- ☁️ Firestore Realtime Database
-- 🧭 React Navigation
-- 🎨 UI dinâmica baseada no sistema selecionado
+**Status:** em desenvolvimento. Algumas áreas de interface e funcionalidades previstas ainda não estão concluídas ou conectadas; confira o comportamento atual do código antes de considerar qualquer recurso pronto para uso.
 
----
+## Tecnologias
 
-# 🎲 Sistemas Suportados
-
-## 👁️ Ordem Paranormal
-Sistema investigativo e sobrenatural focado em horror psicológico.
-
-### Características
-- Pentagrama de atributos
-- Sistema de SAN (Sanidade)
-- Rolagem múltipla de d20
-- Interface dark investigativa
-- Elementos paranormais
-
----
-
-## 🕯️ Sacramento
-Sistema de horror gótico e sobrevivência.
-
-### Características
-- Estética envelhecida
-- Sistema de traumas
-- Vitalidade e Estabilidade
-- Inventário limitado
-- Horror narrativo
-
----
-
-## 🐉 D&D 5e
-Sistema clássico de fantasia medieval.
-
-### Características
-- Livro de magias
-- Proficiência automática
-- Cálculo automático de modificadores
-- Sistema completo de inventário
-- Fichas SRD integradas
-
----
-
-# 🛠️ Tecnologias Utilizadas
-
-| Tecnologia | Finalidade |
-|---|---|
-| React Native | Aplicação Mobile |
-| TypeScript | Tipagem forte |
-| Firebase Auth | Login e autenticação |
-| Firestore | Banco em tempo real |
-| Firebase Storage | Upload de imagens |
-| React Navigation | Navegação |
-| Gesture Handler | Movimentação de tokens |
-| Reanimated | Animações |
-| Lucide React Native | Ícones |
-| Context API | Estado global |
-
----
-
-# 📂 Estrutura do Projeto
-
-```bash
-src/
-├── assets/                # Imagens e backgrounds
-│
-├── components/            # Componentes reutilizáveis
-│   ├── Dice/
-│   ├── Map/
-│   ├── Character/
-│   ├── Documents/
-│   └── UI/
-│
-├── context/               # Context API
-│   ├── AuthContext.tsx
-│   ├── CampaignContext.tsx
-│   └── ThemeContext.tsx
-│
-├── firebase/
-│   ├── firebaseConfig.ts
-│   ├── firestore.rules
-│   └── storage.rules
-│
-├── lib/                   # Bibliotecas auxiliares
-│
-├── routes/
-│   ├── AppRoutes.tsx
-│   └── AuthRoutes.tsx
-│
-├── screens/
-│   ├── Auth/
-│   ├── Home/
-│   ├── Campaign/
-│   ├── Map/
-│   ├── Character/
-│   ├── Documents/
-│   └── Profile/
-│
-├── services/
-│   ├── authService.ts
-│   ├── campaignService.ts
-│   ├── diceService.ts
-│   └── storageService.ts
-│
-├── systems/
-│   ├── ordem/
-│   ├── sacramento/
-│   └── dnd/
-│
-├── types/
-│   ├── character.ts
-│   ├── campaign.ts
-│   ├── user.ts
-│   └── systems.ts
-│
-├── App.tsx
-└── main.tsx
-```
-
----
-
-# 🔥 Funcionalidades Principais
-
-# 🔐 Sistema de Autenticação
-
-- Cadastro com Email e Senha
-- Login persistente
-- Recuperação de senha
+- React 19
+- TypeScript
+- Vite
 - Firebase Authentication
-- Sessão automática
+- Cloud Firestore
+- React Router
+- Tailwind CSS
+- Framer Motion
+- Konva / React Konva
+- Zustand
+- Radix UI
 
----
+## Executar localmente
 
-# 👤 Perfil do Usuário
-
-- Upload de foto
-- Tirar foto pela câmera
-- Escolher imagem da galeria
-- Alterar username
-- Definir função:
-  - Mestre
-  - Jogador
-- Biblioteca de personagens salvos
-
----
-
-# ⚔️ Sistema de Campanhas
-
-## Mestre
-- Criar campanhas
-- Gerar ID automático
-- Definir sistema RPG
-- Definir tema e trama
-- Criar NPCs
-- Upload de mapas
-- Gerenciar documentos
-
-## Jogador
-- Entrar por ID
-- Criar personagem
-- Editar própria ficha
-- Movimentar apenas próprio token
-
----
-
-# 🗺️ Sistema de Mapas em Tempo Real
-
-## Funcionalidades
-- Upload de mapas
-- Tokens arrastáveis
-- Sincronização em tempo real
-- Adição de:
-  - NPCs
-  - Players
-  - Objetos
-  - Documentos
-- Sistema Drag and Drop
-- Zoom e redimensionamento
-- Duplicar componentes
-- Exclusão dinâmica
-
-## Regras
-| Usuário | Permissão |
-|---|---|
-| Mestre | Move todos os tokens |
-| Jogador | Move apenas o próprio |
-
----
-
-# 📜 Sistema de Fichas
-
-## Recursos
-- Criação dinâmica conforme sistema
-- Inventário
-- Upload de imagens
-- Token automático
-- Rolagem integrada
-- Filtro NPC/Jogador
-- Pesquisa por nome
-
----
-
-# 🎲 Sistema de Dados
-
-## Rolagem Normal
-```bash
-d20
-d10
-d100
-```
-
-## Rolagem Somada
-```bash
-d20+5
-d10+INT
-d20+Luta
-```
-
-## Ordem Paranormal
-- Rola múltiplos d20
-- Mantém maior valor
-
-## D&D
-- d20 + modificador + proficiência
-
-## Sacramento
-- d10 ou d12 narrativos
-
----
-
-# 📂 Sistema de Documentos
-
-## Mestre
-- Meus Documentos
-- Documentos do Grupo
-- Documentos Privados
-
-## Jogador
-- Documentos Próprios
-- Documentos Grupais
-- Chat entre jogadores
-
----
-
-# 📚 Biblioteca Integrada
-
-O sistema possui fichas prontas integradas.
-
-## Ordem Paranormal
-- Zumbi de Sangue
-- Existido
-- Carente
-- Vulto
-
-## Sacramento
-- Carniçal
-- Vigário Corrompido
-- Sombra Errante
-- Doutor da Praga
-
-## D&D
-- Goblin
-- Esqueleto
-- Lobo
-- Dragão Vermelho
-
----
-
-# ☁️ Firebase
-
-# Serviços Utilizados
-
-| Serviço | Uso |
-|---|---|
-| Firebase Auth | Login |
-| Firestore | Dados |
-| Storage | Uploads |
-
----
-
-# 🔒 Regras Firestore
-
-## Mestre
-- Edita tudo
-- Move todos tokens
-- Cria campanhas
-
-## Jogador
-- Edita apenas:
-  - Própria ficha
-  - Próprio token
-  - Próprios documentos
-
----
-
-# 🎨 Temas Dinâmicos
-
-Cada sistema altera automaticamente:
-
-- Backgrounds
-- Botões
-- Ícones
-- Paleta de cores
-- HUD
-- Fontes
-- Dados
-
----
-
-# 📱 Roadmap
-
-- [x] Sistema de login
-- [x] Estrutura modular
-- [x] Firebase integrado
-- [ ] Sistema completo de mapas
-- [ ] Drag and Drop multiplayer
-- [ ] Dados animados 3D
-- [ ] Chat de voz
-- [ ] IA para NPCs
-- [ ] Exportação PDF
-- [ ] Sistema de música ambiente
-
----
-
-# 🧙 Objetivo
-
-O RPG Nexus busca transformar campanhas de RPG de mesa em experiências totalmente digitais, organizadas e imersivas.
-
-O projeto foi pensado para:
-- Mestres
-- Jogadores
-- Streamers
-- Campanhas online
-- Mesas presenciais
-
----
-
-# 🤝 Contribuição
-
-Contribuições são bem-vindas.
+Requisitos: Node.js e npm.
 
 ```bash
-# Fork
-git checkout -b feature/minha-feature
+# Clonar o repositório
+git clone https://github.com/jpedrotg23/rpg-nexus.git
 
-# Commit
-git commit -m "feat: nova feature"
+# Entrar na pasta
+cd rpg-nexus
 
-# Push
-git push origin feature/minha-feature
+# Instalar dependências
+npm install
+
+# Iniciar o ambiente de desenvolvimento
+npm run dev
 ```
 
-Abra um Pull Request 🚀
+### Verificações
+
+```bash
+# Análise estática
+npm run lint
+
+# Verificação de tipos e build de produção
+npm run build
+```
+
+## Firebase
+
+A aplicação utiliza Firebase Authentication e Cloud Firestore. Para executar com um projeto próprio, configure as credenciais e os recursos do Firebase esperados pela implementação. Não publique chaves privadas, tokens ou credenciais de ambientes pessoais no repositório.
+
+## Próximos passos
+
+O projeto continua em evolução. Recursos mais amplos de mesa virtual, mapas, rolagem de dados e ferramentas colaborativas só devem ser considerados disponíveis quando estiverem implementados e testados na aplicação.
 
 ---
 
-# 📄 Licença
-
-Este projeto está licenciado sob a MIT License.
-
----
-
-# 👨‍💻 Autor
-
-## João Pedro Teixeira Guimarães
-
-🎲 Apaixonado por RPG de Mesa  
-⚛️ React Native + Firebase
-
-GitHub:
-https://github.com/jpedrotg23
-
----
-
-# ⭐ Apoie o Projeto
-
-Se gostou do projeto:
-
-- ⭐ Dê uma estrela
-- 🍴 Faça um fork
-- 🧙 Compartilhe com sua party
-- ⚔️ Contribua com melhorias
-
----
-
-<p align="center">
-  <strong>"Grandes campanhas começam com grandes sistemas."</strong>
-</p>
+Desenvolvido por João Pedro Teixeira Guimarães.
